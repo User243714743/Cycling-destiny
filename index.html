@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÉCHAPPÉE — Carrière cycliste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="shell">
+    <section id="onboarding" class="onboarding">
+      <header class="brand"><span class="brand-mark">E</span><div><b>ÉCHAPPÉE</b><small>CAREER MODE / 2026</small></div></header>
+      <div class="intro-grid">
+        <div class="intro-copy">
+          <p class="eyebrow">UNE VIE SUR DEUX ROUES</p>
+          <h1>Écrivez votre<br><em>légende.</em></h1>
+          <p class="lede">De votre première course junior jusqu’au Vélo d’Or : vos décisions, vos jambes et vos alliances façonnent une carrière qui n’appartient qu’à vous.</p>
+          <div class="milestones"><span><i>16</i> JUNIOR</span><span><i>20</i> PRO</span><span><i>42</i> LÉGENDE</span></div>
+        </div>
+        <form id="rider-form" class="setup-card">
+          <div class="step-label">01 — VOTRE COUREUR</div>
+          <label>Nationalité<select id="nationality"></select></label>
+          <label>Prénom<input id="firstName" required placeholder="Généré selon votre nationalité" /></label>
+          <label>Nom<input id="lastName" required placeholder="Généré selon votre nationalité" /></label>
+          <div class="field-row"><label>Profil<select id="profile"></select></label><label>Parcours<select id="origin"></select></label></div>
+          <div id="profile-note" class="profile-note"></div>
+          <button class="primary" type="submit">COMMENCER LA CARRIÈRE <span>→</span></button>
+        </form>
+      </div>
+    </section>
+
+    <section id="game" class="game hidden">
+      <aside class="sidebar">
+        <header class="brand compact"><span class="brand-mark">E</span><div><b>ÉCHAPPÉE</b><small>CAREER MODE</small></div></header>
+        <div class="rider-card">
+          <div class="rider-avatar"><span id="rider-initials">JD</span></div>
+          <div><p id="rider-name">—</p><small id="rider-team">—</small></div>
+          <div class="overall"><span>CAPACITÉ</span><strong id="overall">56</strong></div>
+        </div>
+        <nav>
+          <button class="nav-item active" data-view="dashboard"><span>▦</span> TABLEAU DE BORD</button>
+          <button class="nav-item" data-view="calendar"><span>◫</span> CALENDRIER</button>
+          <button class="nav-item" data-view="rider"><span>◎</span> COUREUR</button>
+          <button class="nav-item" data-view="palmares"><span>★</span> PALMARÈS</button>
+          <button class="nav-item" data-view="hall"><span>♔</span> HALL OF FAME</button>
+        </nav>
+        <div class="season-progress"><div><span>SAISON <b id="season-year">2026</b></span><span id="season-days">0 / 60 J.</span></div><div class="progress"><i id="season-bar"></i></div><small>La charge accroît le risque de blessure.</small></div>
+        <button id="retire" class="retire">METTRE FIN À MA CARRIÈRE</button>
+      </aside>
+
+      <section class="content">
+        <header class="topbar"><div><p class="eyebrow" id="season-label">SAISON JUNIOR · 16 ANS</p><h2 id="view-title">DANS LE PELOTON</h2></div><div class="top-actions"><button id="save-game" title="Sauvegarder">⌁</button><button id="new-game" title="Nouvelle partie">↺</button></div></header>
+        <div id="dashboard" class="view active"></div>
+        <div id="calendar" class="view"></div>
+        <div id="rider" class="view"></div>
+        <div id="palmares" class="view"></div>
+        <div id="hall" class="view"></div>
+      </section>
+    </section>
+  </main>
+  <div id="modal" class="modal hidden"><div class="modal-card" id="modal-content"></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
